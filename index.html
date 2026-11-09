@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz cumpleaños, GNAGNIS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+  .intro-foto{
+  width:130px;height:130px;object-fit:cover;border-radius:50%;
+  border:2px solid var(--oro);padding:5px;background:var(--negro);
+  box-shadow:0 0 0 8px rgba(201,162,75,.1),0 14px 30px rgba(0,0,0,.6);
+}
+:root{
+  --negro:#0b0908;
+  --marino:#101c33;
+  --cafe:#2e1d14;
+  --cafe-claro:#4a3022;
+  --oro:#c9a24b;
+  --oro-claro:#ecd59a;
+  --rosa:#d9a5a0;
+  --papel:#f3e9da;
+  --tinta:#3a2a20;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Jost',sans-serif;font-weight:300;color:var(--papel);
+  background:linear-gradient(180deg,var(--negro) 0%,var(--marino) 45%,var(--cafe) 100%) fixed;
+  min-height:100vh;overflow-x:hidden;
+}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--oro);outline-offset:3px}
+
+/* ───── SOBRE DE ENTRADA ───── */
+#intro{
+  position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:34px;
+  background:radial-gradient(ellipse at 50% 40%,var(--marino),var(--negro) 70%);
+  transition:opacity 1s ease,visibility 1s;
+}
+#intro.fuera{opacity:0;visibility:hidden}
+.intro-txt{font-family:'Bodoni Moda',serif;font-style:italic;font-size:19px;color:var(--oro-claro);text-align:center;padding:0 24px}
+.sobre{position:relative;width:min(300px,78vw);aspect-ratio:3/2;perspective:900px}
+.sobre-cuerpo{position:absolute;inset:0;background:linear-gradient(160deg,var(--cafe-claro),var(--cafe));border-radius:4px;box-shadow:0 24px 50px rgba(0,0,0,.6);overflow:hidden}
+.sobre-cuerpo::before,.sobre-cuerpo::after{content:'';position:absolute;bottom:0;width:50%;height:100%;background:rgba(0,0,0,.14)}
+.sobre-cuerpo::before{left:0;clip-path:polygon(0 0,100% 100%,0 100%)}
+.sobre-cuerpo::after{right:0;clip-path:polygon(100% 0,100% 100%,0 100%)}
+.carta-dentro{position:absolute;left:8%;right:8%;top:6%;height:80%;background:var(--papel);border-radius:2px;transition:transform .9s ease .5s;box-shadow:0 0 0 1px rgba(0,0,0,.1)}
+.solapa{position:absolute;left:0;right:0;top:0;height:58%;background:linear-gradient(180deg,#5a3b2a,var(--cafe-claro));clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .8s ease;z-index:3}
+.sello{
+  position:absolute;left:50%;top:50%;width:54px;height:54px;margin:-27px 0 0 -27px;z-index:4;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,var(--oro-claro),var(--oro) 60%,#8c6d28);
+  display:grid;place-items:center;font-family:'Bodoni Moda',serif;font-style:italic;font-size:26px;color:var(--cafe);
+  box-shadow:0 4px 10px rgba(0,0,0,.5);transition:opacity .4s,transform .4s;animation:latir 2.4s ease-in-out infinite;
+}
+@keyframes latir{50%{transform:scale(1.08)}}
+.sobre.abierto .solapa{transform:rotateX(180deg);z-index:1}
+.sobre.abierto .sello{opacity:0;transform:scale(.4);animation:none}
+.sobre.abierto .carta-dentro{transform:translateY(-62%)}
+.sobre{cursor:pointer;background:none;border:0}
+
+/* ───── ESTRUCTURA ───── */
+main{max-width:500px;margin:0 auto;padding:0 22px;opacity:0;transition:opacity 1.2s ease .3s}
+body.listo main{opacity:1}
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.edad{
+  width:96px;height:96px;border-radius:50%;display:grid;place-items:center;margin-bottom:30px;
+  font-family:'Bodoni Moda',serif;font-size:42px;color:var(--oro);
+  border:1px solid var(--oro);box-shadow:0 0 0 8px rgba(201,162,75,.08),inset 0 0 20px rgba(201,162,75,.12)
+}
+h1{font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(38px,11vw,60px);line-height:1.08;color:var(--papel)}
+h1 span{display:block;font-family:'Pinyon Script',cursive;font-size:1.35em;color:var(--rosa);margin-top:6px}
+.hero p{margin-top:20px;color:rgba(243,233,218,.6);letter-spacing:.5px}
+.bajar{margin-top:42px;width:1px;height:46px;background:linear-gradient(var(--oro),transparent)}
+
+section{padding:56px 0}
+h2{font-family:'Bodoni Moda',serif;font-weight:400;font-style:italic;font-size:30px;color:var(--oro-claro);margin-bottom:6px}
+.sub{font-size:14px;color:rgba(243,233,218,.55);margin-bottom:26px}
+.orn{display:flex;align-items:center;gap:14px;color:var(--oro);opacity:.7}
+.orn::before,.orn::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--oro),transparent)}
+
+/* ───── CARTA DESPLEGABLE ───── */
+.papel{background:var(--papel);color:var(--tinta);border-radius:3px;padding:30px 26px;box-shadow:0 18px 40px rgba(0,0,0,.45);position:relative}
+.papel::before{content:'';position:absolute;inset:8px;border:1px solid rgba(201,162,75,.45);pointer-events:none}
+.papel .cuerpo{max-height:11.5em;overflow:hidden;transition:max-height .9s ease;position:relative}
+.papel .cuerpo::after{content:'';position:absolute;left:0;right:0;bottom:0;height:4.5em;background:linear-gradient(transparent,var(--papel));transition:opacity .4s}
+.papel.abierta .cuerpo::after{opacity:0}
+.papel p{font-family:'Bodoni Moda',serif;font-size:16.5px;line-height:1.85;margin-bottom:1em}
+.btn{
+  display:block;margin:22px auto 0;padding:12px 28px;border:1px solid var(--oro);color:var(--oro-claro);
+  border-radius:40px;font-size:14px;letter-spacing:.6px;transition:background .3s,color .3s
+}
+.btn:hover{background:var(--oro);color:var(--negro)}
+.papel .btn{border-color:var(--cafe-claro);color:var(--cafe)}
+.papel .btn:hover{background:var(--cafe);color:var(--papel)}
+
+/* ───── POLAROIDS QUE GIRAN ───── */
+.fotos{display:flex;flex-wrap:wrap;gap:30px 18px;justify-content:center}
+.flip{width:210px;aspect-ratio:3/3.6;perspective:1000px;cursor:pointer}
+.flip:nth-child(1){transform:rotate(-3deg)}
+.flip:nth-child(2){transform:rotate(2.5deg)}
+.flip-in{position:relative;width:100%;height:100%;transition:transform .85s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d}
+.flip.vuelta .flip-in{transform:rotateY(180deg)}
+.cara{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#fbf6ea;padding:10px 10px 0;box-shadow:0 12px 28px rgba(0,0,0,.5)}
+.cara img{width:100%;aspect-ratio:1;object-fit:cover;display:block;background:var(--cafe-claro)}
+.cara small{display:block;text-align:center;margin-top:12px;font-family:'Pinyon Script',cursive;font-size:20px;color:var(--cafe-claro)}
+.atras{transform:rotateY(180deg);display:grid;place-items:center;text-align:center;padding:22px;background:var(--papel);color:var(--tinta);font-family:'Bodoni Moda',serif;font-style:italic;font-size:15px;line-height:1.6}
+.atras::before{content:'';position:absolute;inset:8px;border:1px solid rgba(201,162,75,.5)}
+
+/* ───── ANÉCDOTAS (ACORDEÓN) ───── */
+.item{border:1px solid rgba(201,162,75,.28);border-radius:6px;background:rgba(46,29,20,.55);margin-bottom:14px;overflow:hidden;transition:border-color .3s,background .3s}
+.item.abierto{border-color:var(--oro);background:rgba(46,29,20,.9)}
+.item-cab{width:100%;display:flex;align-items:center;gap:14px;padding:18px 20px;text-align:left}
+.item-cab .em{font-size:26px}
+.item-cab b{flex:1;font-family:'Bodoni Moda',serif;font-weight:400;font-size:18px;color:var(--oro-claro)}
+.item-cab i{font-style:normal;font-size:22px;color:var(--oro);transition:transform .4s}
+.item.abierto .item-cab i{transform:rotate(45deg)}
+.item-cuerpo{max-height:0;overflow:hidden;transition:max-height .7s ease}
+.item-cuerpo p{padding:0 22px 22px;font-size:15.5px;line-height:1.75;color:rgba(243,233,218,.85)}
+
+/* ───── VELA ───── */
+.pastel{text-align:center}
+.vela-zona{position:relative;display:inline-block;padding-top:54px;cursor:pointer}
+.llama{
+  position:absolute;top:6px;left:50%;width:18px;height:38px;margin-left:-9px;border-radius:50% 50% 50% 50%/65% 65% 35% 35%;
+  background:radial-gradient(ellipse at 50% 75%,#fff6c8,var(--oro) 60%,#e07b2a);box-shadow:0 0 30px 10px rgba(236,213,154,.4);
+  transform-origin:50% 100%;animation:parpadeo 1.1s ease-in-out infinite alternate;transition:opacity .5s,transform .5s
+}
+@keyframes parpadeo{from{transform:scale(1,1) rotate(-2deg)}to{transform:scale(.92,1.08) rotate(2deg)}}
+.vela-zona.apagada .llama{opacity:0;transform:scale(.2);animation:none}
+.humo{position:absolute;top:0;left:50%;width:2px;height:0;margin-left:-1px;background:linear-gradient(rgba(243,233,218,.5),transparent);opacity:0}
+.vela-zona.apagada .humo{animation:humo 2s ease-out forwards}
+@keyframes humo{0%{height:0;opacity:.8}100%{height:70px;opacity:0;transform:translateY(-30px)}}
+.vela{width:12px;height:42px;margin:0 auto;background:repeating-linear-gradient(135deg,var(--rosa) 0 6px,var(--papel) 6px 12px);border-radius:2px}
+.base{width:190px;height:70px;background:linear-gradient(var(--rosa),#b9807b);border-radius:8px 8px 4px 4px;position:relative;box-shadow:0 14px 26px rgba(0,0,0,.5)}
+.base::before{content:'';position:absolute;top:0;left:0;right:0;height:22px;background:var(--papel);border-radius:8px 8px 40% 40%/8px 8px 100% 100%}
+.base::after{content:'';position:absolute;bottom:-12px;left:-14px;right:-14px;height:12px;background:var(--cafe-claro);border-radius:0 0 40px 40px/0 0 12px 12px}
+.pista{margin-top:30px;font-size:14px;color:rgba(243,233,218,.6)}
+.deseo{
+  margin-top:34px;padding:30px 24px;border:1px solid rgba(201,162,75,.4);border-radius:6px;
+  background:linear-gradient(135deg,rgba(201,162,75,.1),rgba(217,165,160,.06));
+  font-family:'Bodoni Moda',serif;font-style:italic;font-size:21px;line-height:1.7;color:var(--oro-claro);
+  opacity:0;transform:translateY(20px) scale(.97);visibility:hidden;transition:opacity 1.2s ease,transform 1.2s ease,visibility 1.2s
+}
+.deseo.vis{opacity:1;transform:none;visibility:visible}
+
+/* ───── FIRMA ───── */
+.firma{text-align:center;padding:30px 0 100px}
+.firma small{font-size:13px;color:rgba(243,233,218,.5)}
+.firma p{font-family:'Pinyon Script',cursive;font-size:52px;color:var(--rosa);line-height:1.2}
+.firma time{display:block;margin-top:8px;font-size:12px;color:rgba(243,233,218,.35);letter-spacing:1px}
+
+/* ───── MÚSICA / CONFETI ───── */
+#btn-sonido{position:fixed;right:18px;bottom:18px;z-index:50;width:48px;height:48px;border-radius:50%;border:1px solid rgba(201,162,75,.5);background:rgba(11,9,8,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-size:19px}
+#confeti{position:fixed;inset:0;pointer-events:none;z-index:150}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01s!important}
+}
+</style>
+</head>
+<body>
+
+<canvas id="confeti"></canvas>
+
+<!-- ENTRADA: SOBRE -->
+<div id="intro">
+  <img class="intro-foto" src="./fotos/img4.jpeg" alt="NANIS">
+  <p class="intro-txt">Tienes una carta NANIS</p>
+  <button class="sobre" id="sobre" aria-label="Abrir la carta">
+    <div class="sobre-cuerpo"></div>
+    <div class="carta-dentro"></div>
+    <div class="solapa"></div>
+    <div class="sello">N</div>
+  </button>
+  <p class="intro-txt" style="font-size:14px;font-family:'Jost',sans-serif;font-style:normal;opacity:.6">Toca el sello para abrirla</p>
+</div>
+
+<main>
+
+  <!-- PORTADA -->
+  <header class="hero">
+    <div class="edad">25</div>
+    <h1>Feliz cumpleaños<span>Gordita</span></h1>
+    <p>Con todo el cariño del mundo</p>
+    <div class="bajar"></div>
+  </header>
+
+  <!-- CARTA -->
+  <section>
+    <h2>Para ti</h2>
+    <p class="sub">Desdobla la carta para leerla completa</p>
+    <div class="papel" id="carta">
+      <div class="cuerpo" id="carta-cuerpo">
+        <p>
+          La verdad no se exactamente por donde comenzar, son muchas cosas las que uno quiere decirte y muchas veces no se como,
+          pero quiero empezar este día felicitandote, deseandote un gran dia y asi mismo agradeciendo a Dios por darte esa dicha de cumplir un año más de vida, 
+          y al mismo tiempo me da la dicha a mi de poderte felicitar en este día, poder darte un abrazo fuerte y un besito en la frente como dice mi mamá AJAJAJA
+          sé que es un dia complicado para ti, que es un dia pesadito y que no quisieras felicitaciones muy probablemente, 
+          pero que crees, que no pienso dejarte pasar este dia como si no fuera importante, porque realmente lo es y mucho,
+          perfectamente sabes que mi admiración hacia ti es enorme, y aunque no parezca, se que lo sabes y que lo tienes presente, claro hay cosas que 
+          podemos mejorar jaja, pero eso es en ambos asi que no hay falla, pero de verdad que el ver como vas caminando por 
+          la vida es muy grato, es muy admirable porque eres super valiente y fuerte, nunca te rindes y no das las cosas por terminadas 
+          antes de tiempo, eres el claro ejemplo de fortaleza y decisión
+        </p>
+        <p>
+          tantas cosas que hemos vivido y que sabemos perfectamente que tendremos muchas más por vivir jeje, se que las circunstancias han 
+          sido muy complicadas, tristes, difíciles y más, pero no imposibles de sobrellevar, perdoname enserio que muchas veces no puedo
+          ser ese abrazo que quieres, o ese consejo que necesitas, o esas palabras que te gustaria tener, pero el proceso
+          ha sido muy pesado, y no soy quien para decirte como llevar todo este duelo, pero creo que a pesar de que vivo con la changa tu eres 
+          la que mas se ha dado cuenta de como me siento, y se que el proceso es muy diferente, aunque duele mucho 
+          para ambos, se que no se puede comparar, pero hey, sabes que estoy aqui para ti, y si bien muchas de las veces no se que decirte
+          se que un abrazo ayuda mucho, perdona que este ausente mucho tiempo, y muchas veces llegue desesperado y no quiera saber casi nada de nadie JAJAJA
+          pero sabes que te I LOVE YOU mucho y que aqui ando pendiente y siempre a la orden JEJEJE, sabes que tus niños 
+          son un gran regalo que me haz dado y la dicha de ser tío de esos dos pingos es una gran bendición 
+        </p>
+      </div>
+      <button class="btn" id="btn-carta">Desdoblar carta</button>
+    </div>
+  </section>
+
+  <div class="orn">✦</div>
+
+  <!-- FOTOS -->
+  <section>
+    <h2>Nuestros momentos</h2>
+    <p class="sub">Toca cada foto para darle la vuelta</p>
+    <div class="fotos">
+      <div class="flip" tabindex="0" role="button" aria-label="Voltear foto 1">
+        <div class="flip-in">
+          <div class="cara"><img src="./fotos/img2.jpeg" alt="Foto 1"><small>Dale la vuelta</small></div>
+          <div class="cara atras">Sabiamos desde niños que ibamos a ser bellos JAJAJA ✨</div>
+        </div>
+      </div>
+      <div class="flip" tabindex="0" role="button" aria-label="Voltear foto 2">
+        <div class="flip-in">
+          <div class="cara"><img src="./fotos/img1.jpeg" alt="Foto 2"><small>Y esta también</small></div>
+          <div class="cara atras">🌿y casi gemelos JAJAJA, aunque tienes más bigote que yo 😂 </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="orn">✦</div>
+
+  <!-- ANÉCDOTAS -->
+  <section>
+    <h2>Y ahora lo chistoso</h2>
+    <p class="sub">Abre cada recuerdo</p>
+
+    <div class="item">
+      <button class="item-cab" aria-expanded="false"><span class="em">😂</span><b>Las caídas curiosas</b><i>+</i></button>
+      <div class="item-cuerpo"><p>
+        como dije anteriormente, se que tendremos muchas más anecdotas juntos y que podremos contarlas sin problemas
+        a nuestros hijos después JAJAJA, y nos verán con cara de ¡¡¡QUEEEEE!!!, porque seremos todos unos señores JAJA y 
+        tan amargados que no nos creerán, como la ves que cantando en el patio de la casa me caí de la silla JAJAJA
+      </p></div>
+    </div>
+
+    <div class="item">
+      <button class="item-cab" aria-expanded="false"><span class="em">🤦‍♀️</span><b>La vez de la hormiga en el pié</b><i>+</i></button>
+      <div class="item-cuerpo"><p>
+        Aun recuerdo mucho ese día en el jardín JAJAJAJA, que pateaste mi telefono y volo como 10 metros JAJAJAJA, habia muchas
+        hormigas y quien iba a pensar que se te subirian a la pata JAJAJA, comprobamos que la pata si salta, pero tambien el teléfono JAJAJA
+      </p></div>
+    </div>
+  </section>
+
+  <div class="orn">✦</div>
+
+  <!-- VELA -->
+  <section class="pastel">
+    <h2>Mi deseo para ti</h2>
+    <p class="sub">Pide un deseo y sopla la vela</p>
+    <div class="vela-zona" id="vela" tabindex="0" role="button" aria-label="Soplar la vela">
+      <div class="humo"></div>
+      <div class="llama"></div>
+      <div class="vela"></div>
+      <div class="base"></div>
+    </div>
+    <p class="pista" id="pista">Toca la vela</p>
+    <div class="deseo" id="deseo">
+      no tengo las palabras correctas para decirte como debe empezar este nuevo año tuyo, y se que vienen momentos dificiles aún, pero tambien muchos alegres
+      No puedo decirte como tiene que ser, ni puedo decirte que no estés triste, porque la vida no funciona así, pero sé que volverás a brillar
+      y sé que tambien lo sabes, que todo el esfuerzo que estás haciendo es para crecer, y estás haciendolo mejor 
+      de lo que creés, te quiero mucho princesita y aqui esoty para ti y para tus niños
+      Que este año que comienza esté lleno de todo lo que mereces. Y mereces muchísimo Gnagnis. pasaleta increible te amo princesita
+    </div>
+  </section>
+  <div class="orn">✦</div> 
+<section>
+  <div class="fotos">
+      <div class="flip" tabindex="0" role="button" aria-label="Voltear foto 1">
+        <div class="flip-in">
+          <div class="cara"><img src="./fotos/img3.jpeg" alt="Foto 1"><small>Dale la vuelta</small></div>
+          <div class="cara atras">No pienso ocupar un lugar que no me corresponde, porque no soy ni una pequeña parte de ese gran hombre, pero 
+            me estoy esforzando por cumplir mi promesa y hacer valer mi palabra, LOS AMO ✨</div>
+        </div>
+      </div>
+</section>
+
+  <!-- FIRMA -->
+  <div class="firma">
+    <small>Con todo el cariño,</small>
+    <p>Manny</p>
+    <time id="fecha"></time>
+  </div>
+</main>
+
+<button id="btn-sonido" title="Música" aria-label="Activar o pausar la música">🔇</button>
+<audio id="audio" src="./audio/cancion.mp3" loop></audio>
+
+<script>
+const $ = s => document.querySelector(s);
+const audio = $('#audio'), btnSon = $('#btn-sonido');
+
+/* Fecha */
+(()=>{const m=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'],h=new Date();
+$('#fecha').textContent=h.getDate()+' de '+m[h.getMonth()]+' de '+h.getFullYear();})();
+
+/* Confeti */
+const cv = $('#confeti'), cx = cv.getContext('2d');
+let parts = [];
+function ajustar(){cv.width=innerWidth;cv.height=innerHeight}
+addEventListener('resize',ajustar);ajustar();
+function confeti(x,y,n=90){
+  const cols=['#c9a24b','#ecd59a','#d9a5a0','#f3e9da','#4a6fa5'];
+  for(let i=0;i<n;i++){
+    const a=Math.random()*Math.PI*2,v=3+Math.random()*7;
+    parts.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-4,w:4+Math.random()*5,h:8+Math.random()*6,
+      r:Math.random()*6,vr:(Math.random()-.5)*.4,c:cols[i%cols.length],vida:120+Math.random()*60});
+  }
+  if(parts.length===n) bucle();
+}
+function bucle(){
+  cx.clearRect(0,0,cv.width,cv.height);
+  parts=parts.filter(p=>p.vida>0);
+  parts.forEach(p=>{
+    p.vy+=.18;p.vx*=.99;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;p.vida--;
+    cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.globalAlpha=Math.min(1,p.vida/40);
+    cx.fillStyle=p.c;cx.fillRect(-p.w/2,-p.h/2,p.w,p.h);cx.restore();
+  });
+  if(parts.length) requestAnimationFrame(bucle);
+}
+
+/* Sobre */
+$('#sobre').addEventListener('click',function(){
+  if(this.classList.contains('abierto')) return;
+  this.classList.add('abierto');
+  audio.play().then(()=>btnSon.textContent='🔊').catch(()=>{});
+  setTimeout(()=>{$('#intro').classList.add('fuera');document.body.classList.add('listo');confeti(innerWidth/2,innerHeight/2,110);},1900);
+});
+
+/* Carta desplegable */
+$('#btn-carta').addEventListener('click',function(){
+  const c=$('#carta'),b=$('#carta-cuerpo'),abierta=c.classList.toggle('abierta');
+  b.style.maxHeight=abierta?b.scrollHeight+'px':'';
+  this.textContent=abierta?'Doblar carta':'Desdoblar carta';
+});
+
+/* Polaroids */
+document.querySelectorAll('.flip').forEach(f=>{
+  const girar=()=>f.classList.toggle('vuelta');
+  f.addEventListener('click',girar);
+  f.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();girar()}});
+});
+
+/* Acordeón */
+document.querySelectorAll('.item-cab').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const it=b.parentElement,cu=it.querySelector('.item-cuerpo'),abre=!it.classList.contains('abierto');
+    it.classList.toggle('abierto',abre);
+    b.setAttribute('aria-expanded',abre);
+    cu.style.maxHeight=abre?cu.scrollHeight+'px':'0';
+  });
+});
+
+/* Vela */
+const vela=$('#vela');
+function soplar(){
+  if(vela.classList.contains('apagada')) return;
+  vela.classList.add('apagada');
+  $('#pista').textContent='Que se cumpla ✨';
+  setTimeout(()=>{$('#deseo').classList.add('vis');const r=vela.getBoundingClientRect();confeti(r.left+r.width/2,r.top+20,120);},700);
+}
+vela.addEventListener('click',soplar);
+vela.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();soplar()}});
+
+/* Música */
+btnSon.addEventListener('click',()=>{
+  if(audio.paused){audio.play().catch(()=>{});btnSon.textContent='🔊'}
+  else{audio.pause();btnSon.textContent='🔇'}
+});
+</script>
+</body>
+</html>
